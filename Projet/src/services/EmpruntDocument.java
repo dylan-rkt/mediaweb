@@ -28,8 +28,6 @@ public class EmpruntDocument extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type='text/javascript'>"
 					+ "alert(\"Erreur lors de l'emprunt (document peut-être déjà emprunté ?)\");"
-					+ "location='connexion';"
-					+ "console.log(location);"
 					+ "</script>");
 		}
 		response.sendRedirect(request.getContextPath() + "/connexion");

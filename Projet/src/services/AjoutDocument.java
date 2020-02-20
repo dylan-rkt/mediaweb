@@ -13,8 +13,7 @@ import mediatek2020.Mediatheque;
 
 @WebServlet("/ajoutdoc")
 public class AjoutDocument extends HttpServlet {
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		if(request.getParameter("inputTitre").isEmpty() || request.getParameter("inputAuteur").isEmpty()) {
 			PrintWriter out = response.getWriter();
 			out.println("<script type='text/javascript'>"
@@ -23,10 +22,10 @@ public class AjoutDocument extends HttpServlet {
 					+ "console.log(location);"
 					+ "</script>");
 		} else {
-			int type = Integer.parseInt(request.getParameter("type"));
+			int typeDoc = Integer.parseInt(request.getParameter("type"));
 			String title = request.getParameter("inputTitre");
 			String author = request.getParameter("inputAuteur");
-			Mediatheque.getInstance().nouveauDocument(type, title, author);
+			Mediatheque.getInstance().nouveauDocument(typeDoc, title, author);
 			response.sendRedirect(request.getContextPath() + "/connexion");
 		}
 	}

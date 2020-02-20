@@ -1,13 +1,13 @@
 package persistant;
 
-public class CD extends DocumentAbs {
+public class CD extends ADocument {
 	
 	public CD(String titre, String auteur, String logUser, String idDoc) {
 		super(titre, auteur, logUser, idDoc);
 	}
 
 	@Override
-	protected String type() {
+	protected String typeDoc() {
 		return "CD";
 	}
 }

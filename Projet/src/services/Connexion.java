@@ -15,7 +15,7 @@ import mediatek2020.items.Utilisateur;
 
 @WebServlet("/connexion")
 public class Connexion extends HttpServlet {
-	public static final String VUE = "/Ressources/Layer/connected.jsp";
+	public static final String VIEW = "/Ressources/Layer/connected.jsp";
 	
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
@@ -28,7 +28,7 @@ public class Connexion extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(!((String) request.getSession().getAttribute("login")).isEmpty()) {
-			getServletContext().getRequestDispatcher(VUE).forward(request, response);
+			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
 		} else {
 			response.sendRedirect(request.getContextPath());
 		}
@@ -40,14 +40,10 @@ public class Connexion extends HttpServlet {
 		
 		if(connectUser(request)) {
 			request.getSession().setAttribute("login", request.getParameter("login"));
-			
-			getServletContext().getRequestDispatcher(VUE).forward(request, response);
-
+			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
 		} else {	// Affichage d'un message d'erreur
 			out.println("<script type='text/javascript'>"
 					+ "alert(\"Nom d'utilisateur ou mot de passe incorrect\");"
-					+ "location='index.jsp';"
-					+ "console.log(location);"
 					+ "</script>");
 		}
 	}

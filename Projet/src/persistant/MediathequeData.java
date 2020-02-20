@@ -2,9 +2,9 @@ package persistant;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +16,13 @@ import mediatek2020.items.Utilisateur;
 //classe mono-instance  dont l'unique instance n'est connue que de la bibliotheque
 //via une auto-déclaration dans son bloc static
 public class MediathequeData implements PersistentMediatheque{
+	private static Connection connection;
+	private static PreparedStatement statement;
 	
 	static {
 		Mediatheque.getInstance().setData(new MediathequeData());
 	}
 	
-	private static Statement statement;
 	
 	private MediathequeData() {
 		try {
@@ -29,30 +30,27 @@ public class MediathequeData implements PersistentMediatheque{
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		Connection conn = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mediaweb", "root", "");
-			statement = conn.createStatement();
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mediaweb", "root", "");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	// va récupérer le document de numéro numDocument dans la BD
-	// et le renvoie
-	// si pas trouvé, renvoie null
+
 	@Override
-	public Document getDocument(int idDoc) {
+	public Document getDocument(int idDoc) { // Renvoie NULL si idDoc inexistant
 		Document doc = null;
 		String sql = "SELECT * FROM documents WHERE idDoc=" + idDoc;
-		ResultSet result = null;
+		ResultSet result;
 		try {
+			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery(sql);
 			if(result.next()) {
-				int typeDoc = result.getInt("typeDoc");
-				String data1 = result.getString("dataDoc1");
-				String data2 = result.getString("dataDoc2");
-				String data3 = result.getString("logUser");
+				String typeDoc = result.getString("typeDoc");
+				String data1 = result.getString("title");
+				String data2 = result.getString("author");
+				String data3 = result.getString("login");
 				doc = DocumentFactory.creerDocument(typeDoc, data1, data2, data3, Integer.toString(idDoc));
 			} else {
 				System.out.println("Document non trouvé");
@@ -64,24 +62,23 @@ public class MediathequeData implements PersistentMediatheque{
 		return doc;
 	}
 
-	// va récupérer le User dans la BD et le renvoie
-	// si pas trouvé, renvoie null
 	@Override
-	public Utilisateur getUser(String login, String password) {
-		String sql = null;
+	public Utilisateur getUser(String login, String password) { //Renvoie NULL si User inexistant
+		String sql;
 		if(password != null)
 			sql = "SELECT * FROM users WHERE login='"
 				+ login + "' AND password='" + password + "';";
 		else
 			sql = "SELECT * FROM users WHERE login='" + login + "';";
-		ResultSet result = null;
+		ResultSet result;
 		Utilisateur u = null;
 		try {
+			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery(sql);
 			if(result.next()) {
-				if(result.getString("type").equals("abonné"))
+				if(result.getString("typeUser").equals("abonné"))
 					u = new Abonne(result.getString("login"));
-				else if(result.getString("type").equals("bibliothécaire"))
+				else if(result.getString("typeUser").equals("bibliothécaire"))
 					u = new Bibliothecaire(result.getString("login"));
 			} else {
 				System.out.println("Login et/ou mot de passe incorrect(s)");
@@ -95,15 +92,11 @@ public class MediathequeData implements PersistentMediatheque{
 
 	@Override
 	public void nouveauDocument(int type, Object... args) {
-		// args[0] -> le titre
-		// args [1] --> l'auteur
-		// etc...
-		// ajout à la bdd
-		String sql = "INSERT INTO documents(dataDoc1, dataDoc2, typeDoc)"
+		String sql = "INSERT INTO documents(title, author, typeDoc)"
 				+ "VALUES('" + args[0] + "','" + args[1] + "'," + type + ")";
 		try {
-			int status = statement.executeUpdate(sql);
-			if(status != 0) {	// Requete effectuee avec succes
+			statement = connection.prepareStatement(sql);
+			if(statement.executeUpdate(sql) != 0) {
 				System.out.println("Document ajouté avec succès");
 			} else {
 				System.out.println("Echec lors de l'ajout du document");
@@ -114,21 +107,22 @@ public class MediathequeData implements PersistentMediatheque{
 		}
 	}
 
-	// renvoie la liste de tous les documents de la bibliothèque
+	
 	@Override
-	public List<Document> tousLesDocuments() {
+	public List<Document> tousLesDocuments() { // Renvoie la liste de tous les documents
 		List<Document> docs = new ArrayList<Document>();
 		String sql = "SELECT * FROM documents";
 		ResultSet result = null;
 		int cptDoc = 0;
 		try {
+			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery(sql);
 			while(result.next()) {
 				cptDoc++;
-				int typeDoc = result.getInt("typeDoc");
-				String data1 = result.getString("dataDoc1");
-				String data2 = result.getString("dataDoc2");
-				String data3 = result.getString("logUser");
+				String typeDoc = result.getString("typeDoc");
+				String data1 = result.getString("title");
+				String data2 = result.getString("author");
+				String data3 = result.getString("login");
 				String idDoc = result.getString("idDoc");
 				docs.add(DocumentFactory.creerDocument(typeDoc, data1, data2, data3, idDoc));
 			}
@@ -148,11 +142,11 @@ public class MediathequeData implements PersistentMediatheque{
 		else
 			sql = "UPDATE documents SET logUser=NULL WHERE idDoc=" + idDoc;
 		try {
-			int status = statement.executeUpdate(sql);
-			if(status != 0) {	// Requete effectuee avec succes
+			statement = connection.prepareStatement(sql);
+			if(statement.executeUpdate(sql) != 0) {	// OK
 				System.out.println("Document mis à jour avec succès");
 			} else {
-				System.out.println("Echec lors de la mise à jour du document" + status);
+				System.out.println("Echec lors de la mise à jour du document");
 			}
 			
 		} catch (SQLException e) {

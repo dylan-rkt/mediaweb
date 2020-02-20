@@ -23,11 +23,4 @@ public class Abonne implements Utilisateur {
 	public Object[] data() {
 		return new String[]{this.name};
 	}
-	
-	public String toString() {
-		return name;
-	}
-
-
-
 }

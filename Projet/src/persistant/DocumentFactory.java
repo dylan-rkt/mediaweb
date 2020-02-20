@@ -3,16 +3,16 @@ package persistant;
 import mediatek2020.items.Document;
 
 public class DocumentFactory {
-	public static Document creerDocument(int type, String auteur, String titre, String logUser, String idDoc) {
+	public static Document creerDocument(String typeDoc, String auteur, String titre, String logUser, String idDoc) {
 		Document d = null;
-		switch(type) {
-			case 1:	// Livre
+		switch(typeDoc) {
+			case "Livre":	// Livre
 				d = new Livre(auteur, titre, logUser, idDoc);
 				break;
-			case 2:
+			case "CD":
 				d = new CD(auteur, titre, logUser, idDoc);
 				break;
-			case 3:
+			case "DVD":
 				d = new DVD(auteur, titre, logUser, idDoc);
 				break;
 		}
