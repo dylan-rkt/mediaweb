@@ -30,6 +30,6 @@ public class RetourDocument extends HttpServlet{
 					+ "alert(\"Erreur lors du retour (document peut-être déjà retourné ?)\");"
 					+ "</script>");
 		}
-		response.sendRedirect(request.getContextPath() + "/connexion");
+		response.sendRedirect(request.getContextPath() + "/ident");
 	}
 }

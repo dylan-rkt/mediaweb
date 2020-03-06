@@ -1,0 +1,80 @@
+* {
+	font-family: Verdana;
+}
+
+.list-group-item {
+	transition: all 0.5s;
+	margin-bottom: -3px !important;
+}
+
+.list-group-item:hover {
+	background-color: rgba(0,0,0,0.02);
+	cursor: pointer;
+}
+
+.fa-exchange-alt {
+	font-size: 60px;
+}
+
+.fa-plus {
+	font-size: 60px;
+}
+
+.list-group a {
+	color: #007bff !important;
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+
+.list-group button:focus {
+	outline: none;
+}
+
+.navbar-toggler {
+	padding: 0 !important;
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+}
+
+.navbar-toggler .collapse div {
+	margin-bottom: -3px ;
+}
+
+.mouseSelected::selection {
+	color: darkturquoise;
+}
+
+.navbar {
+	padding: 15px !important;
+	border-bottom-style: inset;
+}
+
+.navbar-brand {
+	background-image: url(../css/img/logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+}
+
+.en-tête {
+	text-align: center;
+	padding: 20px;
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(234,220,186,1) 0%, rgba(205,237,231,1) 47%, rgba(222,226,245,1) 79%);
+}
+
+.btn-outline-success {
+	color: black !important;
+	border-color: black !important;
+}
+
+.btn {
+	border: 1px solid black !important;
+}
+
+.btn:hover {
+	background-color: black !important;
+	color: white !important;
+	
+}

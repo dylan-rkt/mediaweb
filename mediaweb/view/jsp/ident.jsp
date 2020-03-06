@@ -2,27 +2,33 @@
 <html lang="fr">
 
     <head>
+	
+		<title>Connexion</title>
+	
         <%@ page contentType="text/html; charset=UTF-8" %>
-		<link rel="stylesheet" href="Ressources/CSS/connexion.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		
-        <title>Connexion</title>
+		<link rel="stylesheet" href="view/css/ident.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		
     </head>
 
     <body>
 
 		<div class="background">
-		
+
 			<div class="container login-container">
 			
 				<div class="row justify-content-center">
 
-					<div class="col-md-6 login-form login-form-user">
+					<div class="col-md-7 login-form login-form-user">
 					
-						<h3 class="text-center">Espace Client</h3>
+						<p><h2>Bienvenue dans la médiathèque MediaWeb !</h2></p>
+
+						<br/>
+
+						<h4>Veuillez vous identifier</h4>
 						
-						<form method="post" action="./connexion">
+						<form method="post" action="./ident" class="offset-1 col-10">
 						
 							<div class="form-group">
 							
@@ -38,7 +44,7 @@
 							
 							<div class="form-group">
 							
-								<input type="submit" class="btnSubmit bg-primary" value="Login" />
+								<input type="submit" class="btnSubmit" value="Login" />
 								
 							</div>
 

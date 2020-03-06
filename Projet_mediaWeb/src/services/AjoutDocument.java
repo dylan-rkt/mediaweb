@@ -26,7 +26,7 @@ public class AjoutDocument extends HttpServlet {
 			String title = request.getParameter("inputTitre");
 			String author = request.getParameter("inputAuteur");
 			Mediatheque.getInstance().nouveauDocument(typeDoc, title, author);
-			response.sendRedirect(request.getContextPath() + "/connexion");
+			response.sendRedirect(request.getContextPath() + "/ident");
 		}
 	}
 }

@@ -1,9 +1,28 @@
 body {
-	background: linear-gradient(to bottom right, #e7eaba 15%, #f5deea 75%);
-	height: 100%;
-	margin: 0;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	/* background: linear-gradient(to bottom right, #e7eaba 15%, #f5deea 75%); */
+	/* height: 100%; */
+	/* margin: 0; */
+	/* background-repeat: no-repeat; */
+	/* background-attachment: fixed; */
+	background-image: url(img/background-library.jpg);
+}
+
+.background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 10vh;
+}
+
+.background p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.background h2 {
+	margin-bottom: 0;
+	color: #2f2f2fc9;
 }
 
 .login-container {
@@ -15,6 +34,12 @@ body {
     padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 	z-index: 2;
+	background: linear-gradient(to bottom right, #ded5cc 15%, #e6c28c 75%);
+	border-radius: 5px;
+}
+
+.login-form h4 {
+	color: #000000d1;
 }
 
 .login-form-user h3 {
@@ -34,22 +59,19 @@ body {
 	border-radius: 1rem;
 	padding: 1.5%;
 	border: none;
-	cursor: pointer;
-	font-weight: 600;
+	transition: 0.2s;
+}
+
+.btnSubmit:hover {
+	background-color: black;
 }
 
 .login-form-user .btnSubmit {
-    color: #fff;
-}
-
-.login-form-manager .btnSubmit {
-    color: #0062cc;
+    color: black;
     background-color: white;
 }
 
 .container {
-	margin: 0 auto;
-	padding: 100px;
 	text-align: center;
 }
 
