@@ -2,70 +2,69 @@
 <html>
 
 	<head>
-	
+		
     	<%@ page contentType="text/html; charset=UTF-8" %>
 		
     </head>
 
-
-	<script type='text/javascript'>
-		function indisponible() {
-			alert("Action encore indisponible !");
-		}
-	</script>
-
 	<div id="livreContainer">
 	
-		<div class="container text-center border p-5 mt-5 mb-5">
+		<div class="container text-center mt-5">
 		
-			<p class="font-weight-bold h4 mouseSelected">Emprunter ou rendre un document</p>
+			<p class="font-weight-bold h1">Emprunter Réserver Retourner</p>
 
-			<div class="row d-flex justify-content-between">
+			<div class="row d-flex justify-content-between mt-5">
 			
-				<ul class="list-group col-3 mt-3 row" id="listEmprunt">
+				<ul class="card list-group col-5 mt-4 ml-3 pr-0 row">
 				
-					<p class="mouseSelected">Emprunter</p>
+					<p class="h5 card-header">Emprunter / Réserver</p>
 
 					<%@page import="mediatek2020.items.Document"%>
 					<%@page import="mediatek2020.Mediatheque"%>
 					
-
-
-					<form method="get" action="empresdoc">
+					<form method="get" action="empresdoc" class="pl-5 pt-4 pb-5 pr-5">
 					<% for(Document d : Mediatheque.getInstance().tousLesDocuments()) { %>
 						<% String[] infos = (String[]) d.data(); %>
 						<% if (infos[3] == null) { %>
 							<div class="row">
 								<input type="radio" id="<%=infos[4]%>" name="id" value="<%=infos[4]%>">
-								<label for="<%=infos[4]%>"><%=infos[1]%></label>
+								<label for="<%=infos[4]%>" class="pl-4"><%=infos[1]%></label>
 							</div>
 						<% } %>
 					<% } %>	
-						<input name="traitement" type="submit" value="emprunt"/> 
-						<input name="traitement" type="button" value="réserver" onclick="indisponible()"/>
+						<div class="mt-3">
+							<input name="traitement" type="submit" value="emprunt" class="btnSubmit"/> 
+							<input name="traitement" type="submit" value="réserver" class="btnSubmit"/>
+						</div>
 					</form>
 				</ul>
 
-				<i class="fas fa-exchange-alt col-2 d-flex align-items-center justify-content-center"></i>
-
-				<ul class="list-group col-3 mt-3 row" id="listRendre">
+				<ul class="card list-group col-5 mt-4 ml-3 pr-0 row" id="listRendre">
 				
-					<p class="mouseSelected">Rendre</p>
+					<p class="h5 card-header">Retourner</p>
 					
-					<form method="get" action="retourdoc">
+					<form method="get" action="retourdoc" class="pl-5 pt-4 pb-5 pr-5">
 					<% for(Document d : Mediatheque.getInstance().tousLesDocuments()) { %>
 						<% String[] infos = (String[]) d.data(); %>
 						<% if(!(infos[3] == null) && infos[3].equals((String) request.getSession().getAttribute("login"))) { %>
 							<div class="row">
 								<input type="radio" id="<%=infos[4]%>" name="id" value="<%=infos[4]%>">
-								<label for="<%=infos[4]%>"><%=infos[1]%></label>
+								<label for="<%=infos[4]%>" class="pl-4"><%=infos[1]%></label>
 							</div>
 						<% } %>
 					<% } %>
-						<input type="submit" value="rendre"/> 
+						<input type="submit" value="retourner" class="btnSubmit mt-3" />
 					</form>
 				</ul>
 				
+			</div>
+
+			<div class="col-2 offset-5 pl-5 mt-5">
+				<form action=<%= request.getContextPath()%>>
+							
+					<input class="btnSubmit" type="submit" value="Se déconnecter">
+					
+				</form>
 			</div>
 			
 		</div>
