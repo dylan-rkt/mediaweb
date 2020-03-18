@@ -38,7 +38,7 @@ public class MediathequeData implements PersistentMediatheque{
 	}
 
 	@Override
-	public List<Document> tousLesDocuments() { // Renvoie la liste de tous les documents
+	public List<Document> tousLesDocuments() {
 		List<Document> docs = new ArrayList<Document>();
 		String sql = "SELECT * FROM documents";
 		ResultSet result = null;
@@ -112,16 +112,16 @@ public class MediathequeData implements PersistentMediatheque{
 		ResultSet result;
 		
 		try {
-			statement = connection.prepareStatement(sql);
-			statement.setInt(1, idDoc);
-			result = statement.executeQuery();
-			
-			if (result.next()) {
-				int typeDoc = result.getInt("typeDoc");
-				String title = result.getString("title");
-				String author = result.getString("author");
-				String login = result.getString("login");
-				doc = DocumentFactory.creerDocument(typeDoc, title, author, login, Integer.toString(idDoc));
+				statement = connection.prepareStatement(sql);
+				statement.setInt(1, idDoc);
+				result = statement.executeQuery();
+				
+				if (result.next()) {
+					int typeDoc = result.getInt("typeDoc");
+					String title = result.getString("title");
+					String author = result.getString("author");
+					String login = result.getString("login");
+					doc = DocumentFactory.creerDocument(typeDoc, title, author, login, Integer.toString(idDoc));
 			} 
 			else {
 				System.out.println("Le document n'a pas été trouvé");
@@ -137,7 +137,6 @@ public class MediathequeData implements PersistentMediatheque{
 	@Override
 	public void nouveauDocument(int type, Object... args) {
 		String sql = "INSERT INTO documents(title, author, typeDoc)" + "VALUES(?,?,?)";
-		
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, (String) args[0]);
@@ -160,7 +159,7 @@ public class MediathequeData implements PersistentMediatheque{
 			if (loginUser != null)
 				statement.setString(1, (String) loginUser);
 			else
-				statement.setNull(1, java.sql.Types.VARCHAR); //java.sql.Types.VARCHAR = NULL 
+				statement.setNull(1, java.sql.Types.VARCHAR);
 			statement.setInt(2, idDoc);
 			if (statement.executeUpdate() != 0) {
 				System.out.println("Le document a bien été mis à jour !");

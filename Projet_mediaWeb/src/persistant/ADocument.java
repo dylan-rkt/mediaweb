@@ -20,22 +20,30 @@ public abstract class ADocument implements Document{
 	// une valeur de tableau = une ligne
 	@Override
 	public String[] data() {
-		return new String[]{typeDoc(), title, author, user, idDoc};
+		synchronized(this) {
+			return new String[]{typeDoc(), title, author, user, idDoc};
+		}
 	}
 
 	@Override
 	public void emprunter(Utilisateur u) throws EmpruntException {
-		if(idDoc == null) throw new EmpruntException();
-		MediathequeData.updateEmprunteur(Integer.parseInt(idDoc), u.name());
+		synchronized(this) {
+			if(idDoc == null) throw new EmpruntException();
+			MediathequeData.updateEmprunteur(Integer.parseInt(idDoc), u.name());
+		}
 	}
 
 	@Override
 	public void rendre(Utilisateur u) {
-		MediathequeData.updateEmprunteur(Integer.parseInt(idDoc), null);
+		synchronized(this) {
+			MediathequeData.updateEmprunteur(Integer.parseInt(idDoc), null);
+		}
 	}
 	
 	@Override
 	public void reserver(Utilisateur u) throws ReservationException {
-		throw new ReservationException();
+		synchronized(this) {
+			throw new ReservationException();
+		}
 	}
 }
