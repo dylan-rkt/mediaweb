@@ -11,7 +11,7 @@
 	
 		<div class="container text-center mt-5">
 		
-			<p class="font-weight-bold h1">Emprunter Réserver Retourner</p>
+			<p class="font-weight-bold h1 text-white">Emprunter Réserver Retourner</p>
 
 			<div class="row d-flex justify-content-between mt-5">
 			

@@ -1,5 +1,6 @@
 package services;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -41,12 +42,18 @@ public class LoadOnInitServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
+		
 		if (connectUser(request)) {
 			request.getSession().setAttribute("login", request.getParameter("login"));
 			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
 		} 
 		else {
-			response.sendRedirect(request.getContextPath() + "?lmdp=yes");
+			out.println("<script type='text/javascript'>"
+					+ "alert(\"Nom d'utilisateur ou mot de passe incorrect\");"
+					+ "location='" + request.getContextPath() + "'"
+					+ "</script>");
 		}
 	}
 	

@@ -1,5 +1,4 @@
 package services;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -13,23 +12,31 @@ import javax.servlet.http.HttpServletResponse;
 import mediatek2020.Mediatheque;
 import mediatek2020.items.Utilisateur;
 
-@WebServlet("/connexion")
-public class Connexion extends HttpServlet {
-	public static final String VIEW = "/Ressources/Layer/connected.jsp";
+@WebServlet(urlPatterns="/ident",loadOnStartup=1)
+public class LoadOnInitServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
+	public static final String VIEW = "/view/jsp/dashboard.jsp";
+	
+	@Override
+	public void init(ServletConfig arg0) throws ServletException {
+		super.init(arg0);
+		System.out.println("******************************************************************");
 		try {
 			Class.forName("persistant.MediathequeData");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(!((String) request.getSession().getAttribute("login")).isEmpty()) {
+		if (!((String) request.getSession().getAttribute("login")).isEmpty()) {
 			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
-		} else {
+		} 
+		else {
 			response.sendRedirect(request.getContextPath());
 		}
 	}
@@ -38,12 +45,14 @@ public class Connexion extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		if(connectUser(request)) {
+		if (connectUser(request)) {
 			request.getSession().setAttribute("login", request.getParameter("login"));
 			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
-		} else {	// Affichage d'un message d'erreur
+		} 
+		else {
 			out.println("<script type='text/javascript'>"
 					+ "alert(\"Nom d'utilisateur ou mot de passe incorrect\");"
+					+ "location='" + request.getContextPath() + "'"
 					+ "</script>");
 		}
 	}
@@ -53,7 +62,8 @@ public class Connexion extends HttpServlet {
 		String login = (String) request.getParameter("login");
 		String password = (String) request.getParameter("password");
 		Utilisateur u = null;
-		if((u = Mediatheque.getInstance().getUser(login, password)) != null) {
+		
+		if ((u = Mediatheque.getInstance().getUser(login, password)) != null) {
 			loginStatus = true;
 			request.getSession().setAttribute("userBiblio", u.isBibliothecaire());
 		}

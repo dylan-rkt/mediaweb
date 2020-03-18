@@ -20,12 +20,6 @@
     </head>
 
     <body>
-	
-		<script type='text/javascript'>
-			if (new URLSearchParams(window.location.search).has("lmdp")) {
-				alert("\"Login et/ou Mot de passe incorrect(s)\"");
-			}
-		</script>
 
 		<div>
 		

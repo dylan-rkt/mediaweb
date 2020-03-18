@@ -11,7 +11,7 @@
 	
 		<div class="container text-center mt-5">
 		
-			<p class="font-weight-bold h1">Ajouter Rechercher</p>
+			<p class="font-weight-bold h1 text-white">Ajouter Rechercher</p>
 
 			<div class="row d-flex justify-content-between mt-5">
 			
@@ -23,17 +23,17 @@
 
 						<div class="form-group">
 						
-							<label for="inputTitre" class="mouseSelected">Titre</label>
+							<label for="inputTitre">Titre</label>
 							
-							<input name="inputTitre" type="text" class="form-control mouseSelected" aria-describedby="emailHelp" placeholder="Titre du document">
+							<input name="inputTitre" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Titre du document" required>
 							
 						</div>
 
 						<div class="form-group">
 						
-							<label for="inputAuteur" class="mouseSelected">Auteur</label>
+							<label for="inputAuteur">Auteur</label>
 							
-							<input name="inputAuteur" type="text" class="form-control mouseSelected" placeholder="Auteur du document">
+							<input name="inputAuteur" type="text" class="form-control" placeholder="Auteur du document" required>
 							
 						</div>
 
