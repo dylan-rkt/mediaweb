@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
 CREATE TABLE IF NOT EXISTS `users` (
   `login` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `typeUser` enum('bibliothecaire','abonne') NOT NULL,
+  `typeUser` varchar(20) NOT NULL,
   PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
 

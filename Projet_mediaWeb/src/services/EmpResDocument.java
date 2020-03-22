@@ -17,8 +17,7 @@ import mediatek2020.items.Utilisateur;
 
 @WebServlet("/empresdoc")
 public class EmpResDocument extends HttpServlet {
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		PrintWriter out = response.getWriter();
 		if(request.getParameter("id") == null) {
 			out.println("<script type='text/javascript'>"
@@ -39,7 +38,7 @@ public class EmpResDocument extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/ident");
 			} catch (EmpruntException e) {
 				out.println("<script type='text/javascript'>"
-						+ "alert(\"Erreur lors de l'emprunt (document peut-être déjà emprunté ?)\");"
+						+ "alert(\"Le document a déjà été emprunté\");"
 						+ "location='" + request.getContextPath() + "/ident'"
 						+ "</script>");
 			} catch (ReservationException e) {

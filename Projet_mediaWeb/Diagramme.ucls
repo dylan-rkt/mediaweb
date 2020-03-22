@@ -76,12 +76,12 @@
   </interface>  
   <package id="10" language="java" name="persistant" project="Projet_mediaWeb" file="/Projet_mediaWeb/src/persistant" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="908" width="566" x="992" y="3"/>    
+    <position height="733" width="566" x="992" y="3"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="11" language="java" name="persistant.DVD" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/DVD.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1093" y="805"/>    
+    <position height="-1" width="-1" x="1091" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -90,7 +90,7 @@
   </class>  
   <class id="12" language="java" name="persistant.Bibliothecaire" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/Bibliothecaire.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1086" y="430"/>    
+    <position height="-1" width="-1" x="1081" y="371"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -99,7 +99,7 @@
   </class>  
   <class id="13" language="java" name="persistant.ADocument" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/ADocument.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1373" y="461"/>    
+    <position height="-1" width="-1" x="1363" y="427"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -117,7 +117,7 @@
   </class>  
   <class id="15" language="java" name="persistant.Livre" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/Livre.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1280" y="805"/>    
+    <position height="-1" width="-1" x="1274" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -126,7 +126,7 @@
   </class>  
   <class id="16" language="java" name="persistant.Abonne" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/Abonne.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1086" y="615"/>    
+    <position height="-1" width="-1" x="1081" y="535"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -135,7 +135,7 @@
   </class>  
   <class id="17" language="java" name="persistant.DocumentFactory" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/DocumentFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="104" width="294" x="1247" y="103"/>    
+    <position height="104" width="257" x="1247" y="103"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -144,7 +144,7 @@
   </class>  
   <class id="18" language="java" name="persistant.CD" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/persistant/CD.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1462" y="805"/>    
+    <position height="-1" width="-1" x="1454" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -153,7 +153,7 @@
   </class>  
   <package id="19" language="java" name="services" project="Projet_mediaWeb" file="/Projet_mediaWeb/src/services" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="906" width="499" x="13" y="3"/>    
+    <position height="608" width="499" x="13" y="3"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="20" language="java" name="services.LoadOnInitServlet" project="Projet_mediaWeb" 
@@ -167,7 +167,7 @@
   </class>  
   <class id="21" language="java" name="services.AjoutDocument" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/services/AjoutDocument.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="240" y="339"/>    
+    <position height="-1" width="-1" x="240" y="315"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -176,7 +176,7 @@
   </class>  
   <class id="22" language="java" name="services.EmpResDocument" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/services/EmpResDocument.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="237" y="683"/>    
+    <position height="-1" width="-1" x="240" y="535"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -185,7 +185,7 @@
   </class>  
   <class id="23" language="java" name="services.RetourDocument" project="Projet_mediaWeb" 
     file="/Projet_mediaWeb/src/services/RetourDocument.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="237" y="478"/>    
+    <position height="-1" width="-1" x="240" y="424"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -193,97 +193,105 @@
     </display>  
   </class>  
   <dependency id="24">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="25">    
     <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="28">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <association id="29">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="30" name="data"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <realization id="33">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <generalization id="34">    
+  <generalization id="25">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="13"/>  
   </generalization>  
-  <dependency id="35">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="36">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="37">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <realization id="38">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="4"/>  
-  </realization>  
-  <dependency id="39">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="40">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="41">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <association id="42">    
+  <association id="26">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="43" name="instance"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
+      <attribute id="27" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="45">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="5"/>  
+  <realization id="29">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
   </realization>  
-  <realization id="46">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="5"/>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <realization id="31">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="4"/>  
   </realization>  
-  <dependency id="47">    
+  <dependency id="32">    
     <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <dependency id="48">    
+  <generalization id="33">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="36">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="37" name="data">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="39">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <dependency id="40">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="42">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="46">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <realization id="48">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

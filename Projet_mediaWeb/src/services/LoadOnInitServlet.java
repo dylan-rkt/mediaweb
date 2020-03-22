@@ -14,12 +14,9 @@ import mediatek2020.items.Utilisateur;
 
 @WebServlet(urlPatterns="/ident",loadOnStartup=1)
 public class LoadOnInitServlet extends HttpServlet {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
-	public static final String VIEW = "/view/jsp/dashboard.jsp";
 	
 	@Override
 	public void init(ServletConfig arg0) throws ServletException {
@@ -34,7 +31,7 @@ public class LoadOnInitServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (!((String) request.getSession().getAttribute("login")).isEmpty()) {
-			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+			getServletContext().getRequestDispatcher("/view/jsp/dashboard.jsp").forward(request, response);
 		} 
 		else {
 			response.sendRedirect(request.getContextPath());
@@ -42,31 +39,26 @@ public class LoadOnInitServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		PrintWriter out = response.getWriter();
+		String login = (String) request.getParameter("login");
+		String password = (String) request.getParameter("password");
+		boolean status = false;
+		Utilisateur user = null;
 		
-		if (connectUser(request)) {
+		if ((user = Mediatheque.getInstance().getUser(login, password)) != null) {
+			status = true;
+			request.getSession().setAttribute("userBiblio", user.isBibliothecaire());
+		}
+		
+		if (status) {
 			request.getSession().setAttribute("login", request.getParameter("login"));
-			getServletContext().getRequestDispatcher(VIEW).forward(request, response);
-		} 
+			getServletContext().getRequestDispatcher("/view/jsp/dashboard.jsp").forward(request, response);
+		}
 		else {
 			out.println("<script type='text/javascript'>"
 					+ "alert(\"Nom d'utilisateur ou mot de passe incorrect\");"
 					+ "location='" + request.getContextPath() + "'"
 					+ "</script>");
 		}
-	}
-	
-	public boolean connectUser(HttpServletRequest request) {
-		boolean loginStatus = false;
-		String login = (String) request.getParameter("login");
-		String password = (String) request.getParameter("password");
-		Utilisateur u = null;
-		
-		if ((u = Mediatheque.getInstance().getUser(login, password)) != null) {
-			loginStatus = true;
-			request.getSession().setAttribute("userBiblio", u.isBibliothecaire());
-		}
-		return loginStatus;
 	}
 }

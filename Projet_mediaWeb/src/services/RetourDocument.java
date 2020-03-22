@@ -16,8 +16,7 @@ import mediatek2020.items.Utilisateur;
 
 @WebServlet("/retourdoc")
 public class RetourDocument extends HttpServlet{
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		PrintWriter out = response.getWriter();
 		if(request.getParameter("id") == null) {
 			out.println("<script type='text/javascript'>"
@@ -35,7 +34,7 @@ public class RetourDocument extends HttpServlet{
 				response.sendRedirect(request.getContextPath() + "/ident");
 			} catch (RetourException e) {
 				out.println("<script type='text/javascript'>"
-						+ "alert(\"Erreur lors du retour (document peut-être déjà retourné ?)\");"
+						+ "alert(\"Le document a déjà été retourné\");"
 						+ "location='" + request.getContextPath() + "/ident'"
 						+ "</script>");
 			}
