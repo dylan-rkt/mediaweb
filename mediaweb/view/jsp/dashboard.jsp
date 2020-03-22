@@ -6,21 +6,28 @@
 	
         <%@ page contentType="text/html; charset=UTF-8" %>
 		<link rel="stylesheet" href="view/css/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 		
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		
     </head>
 	
     <body>
 	
-        <jsp:include page="header.jsp"/>
+    <header class="en-tête text-center" style="background: linear-gradient(to bottom right, #ded5cc 15%, #e6c28c 75%) !important; box-shadow: 0 0 7px 0px;">
+
+            <div class="container navbar-top">
+                
+                <img class="taille" src="view/css/img/mediaweb-logo.png" alt="logo"/>
+            
+                <p><h3>MediaWeb, la médiathèque à votre service</h3><p>
+                
+            </div>
+            
+        </header>
+        
         <% if((boolean) request.getSession().getAttribute("userBiblio")) { %>
             <%@include file="librarian.jsp" %>
         <% } else { %>

@@ -11,7 +11,7 @@
 	
 		<div class="container text-center mt-5">
 		
-			<p class="font-weight-bold h1 text-white">Ajouter Rechercher</p>
+			<p class="font-weight-bold h1 txt">Ajouter Rechercher</p>
 
 			<div class="row d-flex justify-content-between mt-5">
 			
@@ -46,8 +46,10 @@
 							<option value="3">CD</option>
 							
 						</select>
+								
+						<hr>
 
-						<input type="submit" value="Ajouter" class="btnSubmit mt-5"/>
+						<input type="submit" value="Ajouter" class="btnSubmit mt-4"/>
 
 					</form>
 
@@ -57,7 +59,7 @@
 				
 					<p class="h5 card-header mb-2">Liste des documents</p>
 					
-					<% for(Document d : Mediatheque.getInstance().tousLesDocuments()) { %>
+					<% for (Document d : Mediatheque.getInstance().tousLesDocuments()) { %>
 						<% String[] infos = (String[]) d.data(); %>
 		                		
 								<li class="list-unstyled mt-1"><span class="font-italic">"<%=infos[1]%>"</span> (<%=infos[2]%>)</li>
@@ -72,11 +74,13 @@
 		</div>
 
 		<div class="col-2 offset-5 pl-5 mt-5">
+		
 			<form action=<%= request.getContextPath()%>>
 						
-				<input class="btnSubmit" type="submit" value="Se déconnecter">
+				<input class="btnSubmit disconnect" type="submit" value="Se déconnecter">
 				
 			</form>
+			
 		</div>
 
 	</div>
