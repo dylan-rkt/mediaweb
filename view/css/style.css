@@ -1,0 +1,137 @@
+* {
+	font-family: Verdana;
+}
+
+body {
+	background-repeat: no-repeat !important;
+	background-image: url(img/background-library.jpg);
+	background-size: cover;
+}
+
+.fa-exchange-alt {
+	font-size: 60px;
+}
+
+.fa-plus {
+	font-size: 60px;
+}
+
+.navbar-toggler {
+	padding: 0 !important;
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+}
+
+.txt {
+	color: #ff4700;
+}
+
+.navbar-toggler .collapse div {
+	margin-bottom: -3px ;
+}
+
+
+.navbar {
+	padding: 15px !important;
+	border-bottom-style: inset;
+}
+
+.navbar-brand {
+	background-image: url(../css/img/mediaweb-logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat !important;
+}
+
+.navbar-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.taille {
+	height: 125px;
+}
+
+.en-tête {
+	text-align: center;
+	background: rgb(255,255,255);
+	background: linear-gradient(to bottom right, #ded5cc 15%, #e6c28c 75%);
+	box-shadow: 0 0 7px 0px;
+}
+
+.btn-outline-success {
+	color: black !important;
+	border-color: black !important;
+}
+
+.btn {
+	border: 1px solid black !important;
+}
+
+.btn:hover {
+	background-color: black !important;
+	color: white !important;
+	
+}
+
+.btnSubmit {
+	border-radius: 1rem;
+	transition: 0.2s;
+	border: none;
+	box-shadow: 0 0 0 0.2rem rgba(150, 179, 157, 0.5);
+}
+
+.btnSubmit:hover {
+	background-color: #cedddc !important;
+}
+
+.btnSubmit:active {
+	color: #4c6159 !important;
+}
+
+.disconnect {
+	height: 35px;
+	width: 200px;
+	margin-bottom: 50px;
+}
+
+.deco {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mt-3 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.card {
+	background: linear-gradient(to bottom right, #ded5cc 15%, #e6c28c 75%) !important;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	background: -webkit-linear-gradient(45deg, #ded5cc 15%, #e6c28c 75%);
+	background: linear-gradient(45deg, #ded5cc 15%, #e6c28c 75%);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #48534b59; 
+}
